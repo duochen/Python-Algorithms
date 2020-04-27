@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import itertools
+import math
 
 
 class App:
