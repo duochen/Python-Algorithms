@@ -1,13 +1,8 @@
-# Implementation of the dynamic stack ADT using list
-class DynamicArrayStack:
+# Implementation of the simple stack ADT using list
+class SimpleArrayStack:
     def __init__(self, limit=10):
-        self.data = limit*[None]
+        self.data = []
         self.limit = limit
-
-    def resize(self):
-        newStk = list(self.data)
-        self.limit = 2*self.limit
-        self.data = newStk
 
     def size(self):
         return len(self.data)
@@ -17,9 +12,9 @@ class DynamicArrayStack:
 
     def push(self, item):
         if len(self.data) >= self.limit:
-            self.resize()
-        self.data.append(item)
-        print('Stack after push', self.data)
+            print('Stack Overflow!')
+        else:
+            self.data.append(item)
 
     def pop(self):
         if len(self.data) <= 0:
@@ -35,7 +30,9 @@ class DynamicArrayStack:
         else:
             return self.data[-1]
 
-s = DynamicArrayStack(5)
+########################################################
+
+s = SimpleArrayStack(5)
 s.push("1")
 s.push("21")
 s.push("14")
