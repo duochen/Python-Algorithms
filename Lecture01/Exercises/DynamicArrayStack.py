@@ -1,3 +1,4 @@
+# Implementation of the dynamic stack ADT using list
 class DynamicArrayStack:
     def __init__(self, limit=10):
         self.data = limit*[None]

@@ -1,3 +1,4 @@
+# Implementation of the simple stack ADT using list
 class SimpleArrayStack:
     def __init__(self, limit=10):
         self.data = []
