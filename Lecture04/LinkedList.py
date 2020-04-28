@@ -1,12 +1,5 @@
-class EmptyLinkedListError(Exception):
-    pass
-
-class Node:
-    slots = 'element', 'next'
-
-    def __init__(self, element, next):
-        self.element = element
-        self.next = next
+from Node import Node
+from EmptyLinkedListError import EmptyLinkedListError
 
 class LinkedList:
     def __init__(self):
@@ -21,34 +14,34 @@ class LinkedList:
         return self.size == 0
 
     def add_first(self, e):
-        newest = Node(e, None)
+        new_node = Node(e, None)
         if self.is_empty():
-            self.head = newest
-            self.tail = newest
+            self.head = new_node
+            self.tail = new_node
         else:
-            newest.next = self.head
-        self.head = newest
+            new_node.next = self.head
+        self.head = new_node
         self.size += 1
 
     def add_last(self, e):
-        newest = Node(e, None)
+        new_node = Node(e, None)
         if self.is_empty():
-            self.head = newest
-            self.tail = newest
+            self.head = new_node
+            self.tail = new_node
         else:
-            self.tail.next = newest
-        self.tail = newest
+            self.tail.next = new_node
+        self.tail = new_node
         self.size += 1
 
     def add_any(self, e, pos):
-        newest = Node(e, None)
-        thead = self.head
+        new_node = Node(e, None)
+        head_node = self.head
         i = 1
         while i < pos:
-            thead = thead.next
+            head_node = head_node.next
             i += 1
-        newest.next = thead.next
-        thead.next = newest
+        new_node.next = head_node.next
+        head_node.next = new_node
         self.size += 1
 
     def remove_first(self):
@@ -64,14 +57,14 @@ class LinkedList:
     def remove_last(self):
         if self.is_empty():
             raise EmptyLinkedListError('Linked List Empty')
-        thead = self.head
+        head_node = self.head
         i = 0
         while i < self.len() - 2:
-            thead = thead.next
+            head_node = head_node.next
             i += 1
-        self.tail = thead
-        thead = thead.next
-        value = thead.element
+        self.tail = head_node
+        head_node = head_node.next
+        value = head_node.element
         self.tail.next = None
         self.size -= 1
         return value
@@ -79,21 +72,21 @@ class LinkedList:
     def remove_any(self, pos):
         if self.is_empty():
             raise EmptyLinkedListError('Linked List Empty')
-        thead = self.head
+        head_node = self.head
         i = 1
         while i < pos-1:
-            thead = thead.next
+            head_node = head_node.next
             i += 1
-        value = thead.next.element
-        thead.next = thead.next.next
+        value = head_node.next.element
+        head_node.next = head_node.next.next
         self.size -= 1
         return value
 
     def display(self):
-        thead = self.head
-        while thead:
-            print(thead.element, end='-->')
-            thead = thead.next
+        head_node = self.head
+        while head_node:
+            print(head_node.element, end='-->')
+            head_node = head_node.next
         print()
 
 ###################################################################
