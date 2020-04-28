@@ -14,16 +14,103 @@ class CircularLinkedList:
         return self.size == 0
 
     def add_first(self, e):
-        newest = Node(e, None)
+        new_node = Node(e, None)
         if self.is_empty():
-            newest.next = newest
-            self.head = newest
-            self.tail = newest
+            new_node.next = new_node
+            self.head = new_node
+            self.tail = new_node
         else:
-            self.tail.next = newest
-            newest.next = self.head
-        self.head = newest
+            self.tail.next = new_node
+            new_node.next = self.head
+        self.head = new_node
         self.size += 1
 
     def add_last(self, e):
+        new_node = Node(e,None)
+        if self.is_empty():
+            self.head = new_node
+            new_node.next = new_node
+        else:
+            new_node.next = self.tail.next
+            self.tail.next = new_node
+        self.tail = new_node
+        self.size += 1
+
+    def add_any(self, e, pos):
+        new_node = Node(e,None)
+        head_node = self.head
+        i = 1
+        while i < pos:
+            head_node = head_node.next
+            i += 1
+        new_node.next = head_node.next
+        head_node.next = new_node
+        self.size += 1
+
+    def remove_first(self):
+        if self.is_empty():
+            raise EmptyLinkedListError('Linked List Empty')
+        old_head_node = self.tail.next
+        self.tail.next = old_head_node.next
+        self.head = old_head_node.next
+        self.size -= 1
+        if self.is_empty():
+            self.tail = None
+        return old_head_node.element
+
+    def remove_last(self):
+        if self.is_empty():
+            raise EmptyLinkedListError('Linked List Empty')
+        head_node = self.head
+        i = 0
+        while i < self.len() - 2:
+            head_node = head_node.next
+            i += 1
+        self.tail = head_node
+        head_node = head_node.next
+        self.tail.next = self.head
+        value = head_node.element
+        self.size -= 1
+        return value
+
+    def remove_any(self, pos):
+        if self.is_empty():
+            raise EmptyLinkedListError('Linked List Empty')
+        head_node = self.head
+        i = 1
+        while i < pos-1:
+            head_node = head_node.next
+            i += 1
+        value = head_node.next.element
+        head_node.next = head_node.next.next
+        self.size -= 1
+        return value
+
+    def display(self):
+        head_node = self.head
+        i = 0
+        while i < self.len():
+            print(head_node.element, end='-->')
+            head_node = head_node.next
+            i += 1
+        print()
+
+########################################################
+
+l = CircularLinkedList()
+l.add_last(10)
+l.add_last(20)
+l.add_last(30)
+l.add_last(40)        
+l.display()
+print('Deleted: ', l.remove_first())    
+l.display()
+l.add_first(60)
+l.display()
+print('Deleted: ', l.remove_last())
+l.display()
+l.add_any(90, 2)
+l.display()
+l.remove_any(2)
+l.display()
         
