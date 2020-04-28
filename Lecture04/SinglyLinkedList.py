@@ -1,7 +1,7 @@
 from Node import Node
 from EmptyLinkedListError import EmptyLinkedListError
 
-class LinkedList:
+class SinglyLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
@@ -91,7 +91,7 @@ class LinkedList:
 
 ###################################################################
 
-l = LinkedList()
+l = SinglyLinkedList()
 l.add_last(10)
 l.add_last(20)
 l.add_last(30)
