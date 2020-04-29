@@ -9,6 +9,11 @@ class Queue:
         else:
             return False
     
+    def dequeue(self):
+        if len(self.data) > 0:
+            return self.data.pop()
+        return "No elements in Queue!"
+
     def size(self):
         return len(self.data)
 
@@ -17,4 +22,5 @@ q = Queue()
 q.enqueue("Mon")
 q.enqueue("Tue")
 q.enqueue("Wed")
-print(q.size())
+print(q.dequeue())
+print(q.dequeue())
