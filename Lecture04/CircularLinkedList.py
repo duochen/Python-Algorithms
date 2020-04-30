@@ -56,7 +56,7 @@ class CircularLinkedList:
         self.size -= 1
         if self.is_empty():
             self.tail = None
-        return old_head_node.element
+        return old_head_node.data
 
     def remove_last(self):
         if self.is_empty():
@@ -69,7 +69,7 @@ class CircularLinkedList:
         self.tail = head_node
         head_node = head_node.next
         self.tail.next = self.head
-        value = head_node.element
+        value = head_node.data
         self.size -= 1
         return value
 
@@ -81,7 +81,7 @@ class CircularLinkedList:
         while i < pos-1:
             head_node = head_node.next
             i += 1
-        value = head_node.next.element
+        value = head_node.next.data
         head_node.next = head_node.next.next
         self.size -= 1
         return value
@@ -90,7 +90,7 @@ class CircularLinkedList:
         head_node = self.head
         i = 0
         while i < self.len():
-            print(head_node.element, end='-->')
+            print(head_node.data, end='-->')
             head_node = head_node.next
             i += 1
         print()

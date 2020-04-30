@@ -47,7 +47,7 @@ class SinglyLinkedList:
     def remove_first(self):
         if self.is_empty():
             raise EmptyLinkedListError('Linked List Empty')
-        value = self.head.element
+        value = self.head.data
         self.head = self.head.next
         self.size -= 1
         if self.is_empty():
@@ -64,7 +64,7 @@ class SinglyLinkedList:
             i += 1
         self.tail = head_node
         head_node = head_node.next
-        value = head_node.element
+        value = head_node.data
         self.tail.next = None
         self.size -= 1
         return value
@@ -77,7 +77,7 @@ class SinglyLinkedList:
         while i < pos-1:
             head_node = head_node.next
             i += 1
-        value = head_node.next.element
+        value = head_node.next.data
         head_node.next = head_node.next.next
         self.size -= 1
         return value
@@ -85,7 +85,7 @@ class SinglyLinkedList:
     def display(self):
         head_node = self.head
         while head_node:
-            print(head_node.element, end='-->')
+            print(head_node.data, end='-->')
             head_node = head_node.next
         print()
 

@@ -1,14 +1,14 @@
 class Node:
-    slots = 'element', 'next'
+    slots = 'data', 'next'
 
-    def __init__(self, element, next):
-        self.element = element
+    def __init__(self, data, next):
+        self.data = data
         self.next = next
 
 class DoubleNode:
-    slots = 'element', 'prev', 'next'
+    slots = 'data', 'prev', 'next'
     
-    def __init__(self, element, prev, next):
-        self.element = element
+    def __init__(self, data, prev, next):
+        self.data = data
         self.prev = prev
         self.next = next

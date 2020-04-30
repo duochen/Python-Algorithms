@@ -1,6 +1,6 @@
 class Node:
-    def __init__(self, element=None):
-        self.element = element
+    def __init__(self, data=None):
+        self.data = data
         self.next = None
 
 class LinkedList:
@@ -10,7 +10,7 @@ class LinkedList:
     def display(self):
         node = self.head
         while node is not None:
-            print(node.element)
+            print(node.data)
             node = node.next
 
     def add_first(self, newdata):
@@ -39,12 +39,12 @@ class LinkedList:
     def remove_any(self, removedata):
         head_node = self.head
         if (head_node is not None):
-            if (head_node.element == removedata):
+            if (head_node.data == removedata):
                 self.head = head_node.next
                 head_node = None
                 return
         while (head_node is not None):
-            if head_node.element == removedata:
+            if head_node.data == removedata:
                 break
             prev_node = head_node
             head_node = head_node.next

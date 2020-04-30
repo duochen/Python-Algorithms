@@ -53,7 +53,7 @@ class DoublyLinkedList:
     def remove_first(self):
         if self.is_empty():
             raise EmptyLinkedListError('Linked List Empty')
-        value = self.head.element
+        value = self.head.data
         self.head = self.head.next
         self.head.prev = None
         self.size -= 1
@@ -71,7 +71,7 @@ class DoublyLinkedList:
             i += 1
         self.tail = head_node
         head_node = head_node.next
-        value = head_node.element
+        value = head_node.data
         self.tail.next = None
         self.size -= 1
         return value
@@ -91,7 +91,7 @@ class DoublyLinkedList:
     def display(self):
         head_node = self.head
         while head_node:
-            print(head_node.element, end='-->') 
+            print(head_node.data, end='-->') 
             head_node = head_node.next
         print()
 

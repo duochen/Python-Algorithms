@@ -1,6 +1,6 @@
 class Node:
-    def __init__(self, element=None):
-        self.element = element
+    def __init__(self, data=None):
+        self.data = data
         self.next = None
 
 class LinkedList:
@@ -10,7 +10,7 @@ class LinkedList:
     def display(self):
         node = self.head
         while node is not None:
-            print(node.element)
+            print(node.data)
             node = node.next
 
 ##########################################
