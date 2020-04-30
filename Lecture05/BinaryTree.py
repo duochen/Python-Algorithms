@@ -7,25 +7,23 @@ class BinaryTree:
         self.size = 0
 
     def maketree(self, e, left, right):
-        self.root = TreeNode(e, left, right)
+        self.root = TreeNode(e, left.root, right.root)
         left.root = None
         right.root = None
 
     def levelorder(self):
         q = LinkedQueue()
         root_node = self.root
-        #print(root_node.data, end='--')
+        print(root_node.data, end='--')
         q.enqueue(root_node)
 
         while not q.is_empty():
             node = q.dequeue()
-            print(node.data, end='--')
-
-            if node.left is not None:
-                print(node.data, end='--')
+            if node.left:
+                print(node.left.data, end='--')
                 q.enqueue(node.left)
-            if node.right is not None:
-                print(node.data, end='--')
+            if node.right:
+                print(node.right.data, end='--')
                 q.enqueue(node.right)
 
     def inorder(self, root_node):
