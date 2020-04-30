@@ -35,13 +35,31 @@ class LinkedList:
         new_node = Node(newdata)
         new_node.next = middle_node.next
         middle_node.next = new_node
+
+    def remove_any(self, removedata):
+        head_node = self.head
+        if (head_node is not None):
+            if (head_node.element == removedata):
+                self.head = head_node.next
+                head_node = None
+                return
+        while (head_node is not None):
+            if head_node.element == removedata:
+                break
+            prev_node = head_node
+            head_node = head_node.next
+        if (head_node == None):
+            return
+        prev_node.next = head_node.next
+        head_node = None
+
 ##########################################
 
 list1 = LinkedList()
-list1.head = Node("Mon")
-e2 = Node("Tue")
-e3 = Node("Thu")
-list1.head.next = e2
-e2.next = e3
-list1.add_any(list1.head.next, "Fri")
+list1.add_first("Mon")
+list1.add_first("Tue")
+list1.add_first("Wed")
+list1.add_first("Thu")
+list1.display()
+list1.remove_any("Thu")
 list1.display()
