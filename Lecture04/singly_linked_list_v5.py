@@ -3,7 +3,7 @@ class Node:
         self.data = data
         self.next = None
 
-class LinkedList:
+class singly_linked_list:
     def __init__(self):
         self.head = None
 
@@ -55,7 +55,7 @@ class LinkedList:
 
 ##########################################
 
-list1 = LinkedList()
+list1 = singly_linked_list()
 list1.add_first("Mon")
 list1.add_first("Tue")
 list1.add_first("Wed")
