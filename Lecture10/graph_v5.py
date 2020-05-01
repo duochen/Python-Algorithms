@@ -1,4 +1,4 @@
-# Add a vertex
+# Add an edge
 
 class graph:
     def __init__(self, dict = None):
@@ -12,6 +12,14 @@ class graph:
 
     def get_vertices(self):
         return list(self.dict.keys())
+
+    def add_edge(self, edge):
+        edge = set(edge)
+        (v1, v2) = tuple(edge)
+        if v1 in self.dict:
+            self.dict[v1].append(v2)
+        else:
+            self.dict[v1] = v2
 
     def get_edges(self):
         edges = []
@@ -32,5 +40,6 @@ dict = {
 }
 
 g = graph(dict)
-g.add_vertex('f')
-print(g.get_vertices())
+g.add_edge({'a', 'e'})
+g.add_edge({'a', 'c'})
+print(g.get_edges())
