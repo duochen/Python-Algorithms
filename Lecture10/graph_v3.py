@@ -1,3 +1,5 @@
+# Display graph edges
+
 class graph:
     def __init__(self, dict = None):
         if dict is None:

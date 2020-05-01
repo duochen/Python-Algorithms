@@ -1,3 +1,5 @@
+# Print a graph
+
 graph = {
     "a": ["b", "c"],
     "b" : [ "a" , "d" ],
