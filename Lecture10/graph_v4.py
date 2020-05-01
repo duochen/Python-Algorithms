@@ -1,14 +1,18 @@
-# Display graph edges
+# Add a vertex
 
 class graph:
     def __init__(self, dict = None):
         if dict is None:
             dict = {}
         self.dict = dict
-    
+
     def get_vertices(self):
         return list(self.dict.keys())
-            
+
+    def add_vertex(self, vertex):
+        if vertex not in self.dict:
+            self.dict[vertex] = []
+
     def get_edges(self):
         edges = []
         for key in self.dict:
@@ -28,4 +32,5 @@ dict = {
 }
 
 g = graph(dict)
-print(g.get_edges())
+g.add_vertex('f')
+print(g.get_vertices())
