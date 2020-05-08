@@ -12,7 +12,7 @@ def interpolation_search(values, search_for):
             start = mid + 1
     return "Searched element not in the list"
 
-########################################################33
+#########################################################
 
 l = [2 , 6 , 11 , 19 , 27 , 31 , 45 , 121]
 print(interpolation_search( l, 11 ))           
