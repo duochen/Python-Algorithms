@@ -21,4 +21,4 @@ def partition(list, low, high):
 list = [84, 21, 96, 15, 47]
 print('Original list: ', list)
 quicksort(list, 0, len(list)-1)
-print('Sorted list: ', list)                
+print('Sorted list: ', list)
