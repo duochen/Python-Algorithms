@@ -7,9 +7,8 @@ def mergesort(list):
         mergesort(left)
         mergesort(right)
 
-        i = 0
-        j = 0
-        k = 0
+        i,j,k = 0,0,0
+
         while i < len(left) and j < len(right):
             if left[i] < right[j]:
                 list[k] = left[i]
@@ -34,4 +33,4 @@ def mergesort(list):
 list = [84, 21, 96, 15, 47]
 print('Original list: ', list)
 mergesort(list)
-print('Sorted list: ', list)            
+print('Sorted list: ', list)
