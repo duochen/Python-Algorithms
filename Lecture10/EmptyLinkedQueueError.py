@@ -1,0 +1,2 @@
+class EmptyLinkedQueueError(Exception):
+    pass
