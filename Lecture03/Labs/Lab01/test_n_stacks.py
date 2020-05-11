@@ -1,7 +1,6 @@
 from nose.tools import assert_equal
 from nose.tools import raises
-#from n_stacks_challenge import Stacks
-from n_stacks_solution import Stacks
+from n_stacks_challenge import Stacks
 
 class TestStacks(object):
 

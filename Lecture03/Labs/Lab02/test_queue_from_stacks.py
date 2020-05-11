@@ -1,5 +1,5 @@
 from nose.tools import assert_equal
-from queue_from_stacks_solution import QueueFromStacks
+from queue_from_stacks_challenge import QueueFromStacks
 
 class TestQueueFromStacks(object):
 
