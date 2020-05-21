@@ -16,3 +16,14 @@
 
 def word_split(phrase,list_of_words, output = None):
     pass
+
+############################################################
+
+result = word_split('themanran',['the','ran','man'])
+print(result)
+
+result = word_split('ilovedogsJohn',['i','am','a','dogs','lover','love','John'])
+print(result)
+
+result = word_split('themanran',['clown','ran','man'])
+print(result)
