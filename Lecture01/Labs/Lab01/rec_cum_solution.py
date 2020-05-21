@@ -13,5 +13,7 @@ def rec_sum(n):
     else:
         return n + rec_sum(n-1)
 
+############################################################
+
 result = rec_sum(4)
 print(result)       # 10
