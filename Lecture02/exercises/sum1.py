@@ -1,3 +1,5 @@
+# Measure the time
+# python -m timeit "import sum1; sum1.sum1(10)"
 def sum1(n):
     final_sum = 0
 
