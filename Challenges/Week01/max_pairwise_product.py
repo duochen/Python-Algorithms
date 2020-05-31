@@ -1,4 +1,5 @@
 import time
+from itertools import combinations as c
 
 def method1(numbers):
     start = time.perf_counter()
@@ -24,9 +25,25 @@ def method2(numbers):
     print(end-start)    
     return max_product
 
+def method3(lst):
+    start = time.perf_counter()
+    result = max([i for j in [[i*j for i in lst if i != j] for j in lst] for i in j]) 
+    end = time.perf_counter()
+    print(end-start)    
+    return result
+
+def method4(lst):
+    start = time.perf_counter()
+    result = max([i*j for (i, j) in list(c(lst, 2))])
+    end = time.perf_counter()
+    print(end-start)        
+    return result
+
 def max_pairwise_product(numbers):
-    # method1(numbers)
-    method2(numbers)
+    method1(numbers)
+    # method2(numbers)
+    method3(numbers)
+    method4(numbers)
     
 if __name__ == '__main__':
     input_n = int(input())
