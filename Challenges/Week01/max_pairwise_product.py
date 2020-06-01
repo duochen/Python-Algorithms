@@ -39,11 +39,20 @@ def method4(lst):
     print(end-start)        
     return result
 
+def method5(lst):
+    start = time.perf_counter()
+    a = sorted(lst)
+    result = a[-1]*a[-2]
+    end = time.perf_counter()
+    print(end-start)        
+    return result
+
 def max_pairwise_product(numbers):
     method1(numbers)
     # method2(numbers)
     method3(numbers)
     method4(numbers)
+    method5(numbers)
     
 if __name__ == '__main__':
     input_n = int(input())
