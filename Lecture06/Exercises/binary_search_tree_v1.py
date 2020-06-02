@@ -19,15 +19,15 @@ class Node:
         else:
             self.data = data
 
-    def findvalue(self, value):
+    def search(self, value):
         if value < self.data:
             if self.left is None:
                 return str(value) + " Not Found"
-            return self.left.findvalue(value)
+            return self.left.search(value)
         elif value > self.data:
             if self.right is None:
                 return str(value) + " Not Found"
-            return self.right.findvalue(value)
+            return self.right.search(value)
         else:
             print(str(self.data) + ' is found')
 
@@ -45,5 +45,5 @@ root.insert(6)
 root.insert(14)
 root.insert(3)
 root.display()
-print(root.findvalue(7))
-print(root.findvalue(14))
+print(root.search(7))
+print(root.search(14))
