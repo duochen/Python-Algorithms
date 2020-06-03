@@ -145,6 +145,7 @@ class BinarySearchTree:
             else:
                 parent.right = child
 
+    # Iterative 
     def min1(self):
         if self.is_empty():
             raise TreeEmptyError("Tree is empty")
@@ -153,14 +154,7 @@ class BinarySearchTree:
             p = p.left
         return p.data
 
-    def max1(self):
-        if self.is_empty():
-            raise TreeEmptyError("Tree is empty")
-        p = self.root
-        while p.right is not None:
-            p = p.right
-        return p.data
-
+    # Recursive
     def min2(self):
         if self.is_empty():
             raise TreeEmptyError("Tree is empty")
@@ -170,6 +164,14 @@ class BinarySearchTree:
         if p.left is None:
             return p
         return self._min(p.left)
+
+    def max1(self):
+        if self.is_empty():
+            raise TreeEmptyError("Tree is empty")
+        p = self.root
+        while p.right is not None:
+            p = p.right
+        return p.data
 
     def max2(self):
         if self.is_empty():
