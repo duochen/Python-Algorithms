@@ -1,6 +1,6 @@
 import sys
 from nose.tools import assert_equal
-from stack_min_challenge import StackMin
+from stack_min_solution import StackMin
 
 class TestStackMin(object):
 
