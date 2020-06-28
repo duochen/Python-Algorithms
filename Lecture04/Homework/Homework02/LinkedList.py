@@ -1,14 +1,14 @@
-class Node(object):
+class Node:
     
     def __init__(self, data, next=None):
         self.next = next
         self.data = data
 
-    def __str__(self):
-        return self.data
+    # def __str__(self):
+    #     return self.data
 
 
-class LinkedList(object):
+class LinkedList:
 
     def __init__(self, head=None):
         self.head = head

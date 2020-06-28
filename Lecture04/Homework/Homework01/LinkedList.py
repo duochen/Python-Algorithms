@@ -1,4 +1,4 @@
-class Node(object):
+class Node:
     
     def __init__(self, data, next=None):
         self.next = next
@@ -8,7 +8,7 @@ class Node(object):
     #     return self.data
 
 
-class LinkedList():
+class LinkedList:
 
     def __init__(self, head=None):
         self.head = head
