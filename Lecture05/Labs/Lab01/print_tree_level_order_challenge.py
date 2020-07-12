@@ -1,21 +1,19 @@
-from collections import deque
-
 class Node:
-    def __init__(self, val=None):
+    def __init__(self,data):
         self.left = None
         self.right = None
-        self.val =  val
+        self.data = data
 
-def levelOrderPrint(tree):
+def level_order(queue):
     pass
 
-##############################################
-
-root =  Node(1)
-root.left = Node(2)    
-root.left.left = Node(4)
+queue = list()
+root = Node(1)
+queue.append(root)
+root.left = Node(2)
 root.right = Node(3)
+root.left.left = Node(4)
 root.right.left = Node(5)
 root.right.right = Node(6)
 
-levelOrderPrint(root)
+level_order(queue)
