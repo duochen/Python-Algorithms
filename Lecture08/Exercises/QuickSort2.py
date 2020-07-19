@@ -1,35 +1,24 @@
-from random import randint
+def quicksort(list, low, high):
+    if low < high:
+        p = partition(list, low, high)
+        quicksort(list, low, p-1)
+        quicksort(list, p+1, high)
 
-def quicksort(array):
-    # If the input array contains fewer than two elements,
-    # then return it as the result of the function
-    if len(array) < 2:
-        return array
+def partition(list, low, high):
+    i = low - 1
+    pivot = list[high]
+    for j in range(low, high):
+        if list[j] <= pivot:
+            i = i + 1
+            list[i], list[j] = list[j], list[i] 
 
-    low, same, high = [], [], []
+    list[i+1], list[high] = list[high], list[i+1]
 
-    # Select your 'pivot' element randomly
-    pivot = array[randint(0, len(array) - 1)]
-
-    for item in array:
-        # Elements that are smaller than the `pivot` go to
-        # the `low` list. Elements that are larger than
-        # `pivot` go to the `high` list. Elements that are
-        # equal to `pivot` go to the `same` list.
-        if item < pivot:
-            low.append(item)
-        elif item == pivot:
-            same.append(item)
-        elif item > pivot:
-            high.append(item)
-
-    # The final result combines the sorted `low` list
-    # with the `same` list and the sorted `high` list
-    return quicksort(low) + same + quicksort(high)    
+    return i+1
 
 ###################################################
 
-array = [84, 21, 96, 15, 47]
-print('Original array: ', array)
-result = quicksort(array)
-print('Sorted array: ', result)
+list = [84, 21, 96, 15, 47]
+print('Original list: ', list)
+quicksort(list, 0, len(list)-1)
+print('Sorted list: ', list)
