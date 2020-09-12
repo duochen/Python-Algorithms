@@ -1,1 +1,1 @@
-https://nbviewer.jupyter.org/github/donnemartin/interactive-coding-challenges/blob/master/stacks_queues/stack_min/stack_min_challenge.ipynb
+https://leetcode.com/problems/valid-parentheses/
