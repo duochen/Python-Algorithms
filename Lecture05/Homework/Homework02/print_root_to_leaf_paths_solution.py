@@ -13,7 +13,6 @@ def isLeaf(node):
 
 # Recursive function to find paths from root node to every leaf node
 def printRootToLeafPaths(node, path):
-
     # base case
     if node is None:
         return
@@ -25,7 +24,7 @@ def printRootToLeafPaths(node, path):
     if isLeaf(node):
         print(list(path))
 
-    # recur for left and right subtree
+    # recursion for left and right subtree
     printRootToLeafPaths(node.left, path)
     printRootToLeafPaths(node.right, path)
 
