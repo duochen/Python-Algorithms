@@ -19,6 +19,27 @@ def level_order(queue):
 
         print(node.data)
         level_order(queue)
+"""
+Given the following input tree:
+          1
+        /   \
+       2     3
+      /     / \
+     4      5  6
+
+The output is:
+1
+2 3
+4 5 6
+
+or 
+1 
+2 
+3 
+4 
+5 
+6
+"""
 
 
 root = Node(1)
