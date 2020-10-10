@@ -43,7 +43,8 @@ def printRootToLeafPath(node):
 
 if __name__ == '__main__':
 
-    """ Construct below tree
+""" 
+Construct below tree
               1
             /   \
            /     \
@@ -52,7 +53,13 @@ if __name__ == '__main__':
         4   5   6   7
                /     \
               8       9
-    """
+
+The output:
+[1, 2, 4]
+[1, 2, 5]
+[1, 3, 6, 8]
+[1, 3, 7, 9]
+"""
 
     root = Node(1)
     root.left = Node(2)

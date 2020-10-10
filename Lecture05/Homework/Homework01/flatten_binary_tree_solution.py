@@ -17,6 +17,18 @@ def flatten(root):
             root.right = root.left
             root.left = None
 
+"""
+Given the following input tree
+       1
+      /  \
+     2    5 
+    / \  / \
+   3  4     6
+
+The ouput is:
+[1, 2, 3, 4, 5, 6]
+"""
+
 root = Node(1)
 root.left = Node(2)
 root.left.left = Node(3)
