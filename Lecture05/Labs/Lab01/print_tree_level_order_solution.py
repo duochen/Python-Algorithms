@@ -20,13 +20,13 @@ def level_order(queue):
         print(node.data)
         level_order(queue)
 
-queue = list()
+
 root = Node(1)
-queue.append(root)
 root.left = Node(2)
 root.right = Node(3)
 root.left.left = Node(4)
 root.right.left = Node(5)
 root.right.right = Node(6)
-
+queue = list()
+queue.append(root)
 level_order(queue)
