@@ -11,7 +11,8 @@ class Solution:
         ctr = Counter(words)
         heap = [(-ctr[word], word) for word in ctr]
         heapq.heapify(heap)
-        return [heapq.heappop(heap)[1] for _ in range(k)]
+        result = [heapq.heappop(heap)[1] for _ in range(k)]
+        return result
 
 if __name__ == '__main__':
     words = ["a", "abc", "abcdef", "a", "abcd", "abcd", "abc", "abcdefg"]
