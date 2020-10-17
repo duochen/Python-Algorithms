@@ -3,14 +3,12 @@ from collections import deque
 # Data structure to store a Binary Tree node
 class Node:
     def __init__(self, key=None, left=None, right=None):
-
         self.key = key
         self.left = left
         self.right = right
 
 # Function to check if given Binary Tree is Complete or not
 def isComplete(root):
-
     # return if tree is empty
     if root is None:
         return False
@@ -24,7 +22,6 @@ def isComplete(root):
 
     # run till queue is not empty
     while queue:
-
         # pop front node from the queue
         front = queue.popleft()
 

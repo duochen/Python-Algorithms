@@ -13,7 +13,6 @@ def isLeaf(node):
 
 # Recursive function to find paths from root node to every leaf node
 def printRootToLeafPaths(node, path):
-
     # base case
     if node is None:
         return
@@ -25,7 +24,7 @@ def printRootToLeafPaths(node, path):
     if isLeaf(node):
         print(list(path))
 
-    # recur for left and right subtree
+    # recursion for left and right subtree
     printRootToLeafPaths(node.left, path)
     printRootToLeafPaths(node.right, path)
 
@@ -40,10 +39,8 @@ def printRootToLeafPath(node):
     path = deque()
     printRootToLeafPaths(node, path)
 
-
-if __name__ == '__main__':
-
-    """ Construct below tree
+""" 
+Construct below tree
               1
             /   \
            /     \
@@ -52,17 +49,23 @@ if __name__ == '__main__':
         4   5   6   7
                /     \
               8       9
-    """
 
-    root = Node(1)
-    root.left = Node(2)
-    root.right = Node(3)
-    root.left.left = Node(4)
-    root.left.right = Node(5)
-    root.right.left = Node(6)
-    root.right.right = Node(7)
-    root.right.left.left = Node(8)
-    root.right.right.right = Node(9)
+The output:
+[1, 2, 4]
+[1, 2, 5]
+[1, 3, 6, 8]
+[1, 3, 7, 9]
+"""
 
-    # print all root to leaf paths
-    printRootToLeafPath(root)
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+root.right.left = Node(6)
+root.right.right = Node(7)
+root.right.left.left = Node(8)
+root.right.right.right = Node(9)
+
+# print all root to leaf paths
+printRootToLeafPath(root)
