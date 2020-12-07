@@ -68,7 +68,5 @@ for case in range(num_cases):
         for k in range(n):
           if total_votes[k] == min_vote:
             eliminated.add(k)
-  
-
 
   
