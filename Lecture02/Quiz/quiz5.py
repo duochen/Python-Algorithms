@@ -6,4 +6,4 @@ def compute(n):
 
     return val
 
-print(compute(5))
+print(compute(4))
