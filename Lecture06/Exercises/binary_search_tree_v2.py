@@ -249,6 +249,15 @@ class BinarySearchTree:
 ########################################################
 
 bst = BinarySearchTree()
+bst.insert(60)
+bst.insert(40)
+bst.insert(20)
+bst.insert(10)
+bst.insert(30)
+bst.insert(50)
+bst.insert(80)
+bst.insert(70)
+bst.insert(90)
 
 while True:
     print("1.Display Tree")
